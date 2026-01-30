@@ -1,34 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Our Memories 💕</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <!-- مهم جدًا للموبايل -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Memories 💕</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="mem-page">
 
-<h1 class="mem-title">🎀 Our Memories 🎀</h1>
+  <div class="mem-container">
 
-<!-- مشغل اليوتيوب -->
-<div class="video-box">
-<iframe 
-  <iframe 
-  src="https://www.youtube.com/embed/8qQ3v0o-xPY?start=79&rel=0"
-  frameborder="0"
-  allow="autoplay"
-  allowfullscreen>
-</iframe>
-</div>
+    <h1 class="mem-title fade-in">🎀 Our Memories 🎀</h1>
 
-<!-- الصور -->
-<img src="photo1.jpg" class="mem-photo" id="photo" onclick="changePhoto()">
+    <!-- مشغل اليوتيوب -->
+    <div class="video-box fade-in">
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/8qQ3v0o-xPY?start=79&rel=0"
+          frameborder="0"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
 
-<!-- العداد -->
-<div class="counter" id="counter"></div>
+    <!-- الصور -->
+    <img src="photo1.jpg" class="mem-photo fade-in" id="photo" onclick="changePhoto()">
 
-<button class="next-btn" onclick="goFinal()">Next 💕</button>
+    <!-- العداد -->
+    <div class="counter ar fade-in" id="counter"></div>
 
-<script src="script.js"></script>
+  </div>
+
+  <!-- زرار ثابت فوق كل حاجة -->
+  <button class="next-btn-fixed" onclick="goFinal()">Next 💕</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
