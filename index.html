@@ -1,21 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <!-- يخلي الصفحة مظبوطة على الموبايل من غير زوم -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Love 💖</title>
   <link rel="stylesheet" href="style.css">
+  <!-- خط عربي -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS احتياطي */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Naskh Arabic', serif;
+      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      direction: rtl;
+    }
+  </style>
 </head>
 
 <body>
 
   <div class="card">
-    <h2>Enter Password ❤️</h2>
-    <input type="password" id="pass" placeholder="Enter your secret...">
-    <button onclick="checkPass()">Unlock 💕</button>
+    <h2>🔐 أدخل كلمة المرور</h2>
+    <input type="password" id="pass" placeholder="أدخل الكلمة السرية..." autocomplete="off">
+    <button id="unlock-btn" onclick="checkPass()">فتح القفل 💕</button>
+    <p id="error-msg" class="error"></p>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // كود JavaScript داخل HTML لتجنب مشاكل الملف الخارجي
+    function checkPass() {
+      const password = document.getElementById('pass').value;
+      const errorMsg = document.getElementById('error-msg');
+      const btn = document.getElementById('unlock-btn');
+      
+      // مسح الرسائل السابقة
+      errorMsg.textContent = '';
+      errorMsg.style.color = '#ff4757';
+      
+      if (!password.trim()) {
+        errorMsg.textContent = '❗ الرجاء إدخال كلمة المرور';
+        document.getElementById('pass').focus();
+        return;
+      }
+      
+      // تغيير حالة الزر أثناء التحقق
+      btn.disabled = true;
+      btn.textContent = 'جاري التحقق...';
+      
+      // كلمة المرور الصحيحة (يمكن تغييرها)
+      const correctPassword = "حبيبي"; // أو أي كلمة تريدها
+      
+      setTimeout(() => {
+        if (password === correctPassword) {
+          // نجاح - الانتقال للصفحة التالية
+          btn.textContent = '✅ تم! جاري التوجيه...';
+          errorMsg.style.color = '#2ed573';
+          errorMsg.textContent = 'كلمة المرور صحيحة!';
+          
+          // الانتقال للصفحة النهائية بعد تأخير بسيط
+          setTimeout(() => {
+            window.location.href = "final.html";
+          }, 1000);
+          
+        } else {
+          // خطأ
+          errorMsg.textContent = '❌ كلمة المرور غير صحيحة. حاول مرة أخرى.';
+          document.getElementById('pass').value = '';
+          document.getElementById('pass').focus();
+          btn.disabled = false;
+          btn.textContent = 'فتح القفل 💕';
+        }
+      }, 800); // محاكاة وقت تحقق
+    }
+    
+    // السماح بالضغط على Enter في حقل الإدخال
+    document.getElementById('pass').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        checkPass();
+      }
+    });
+    
+    // وضع التركيز على حقل الإدخال عند تحميل الصفحة
+    window.onload = function() {
+      document.getElementById('pass').focus();
+    };
+  </script>
+
 </body>
 </html>
