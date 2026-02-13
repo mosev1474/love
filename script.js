@@ -3,12 +3,12 @@ function checkPass() {
   const pass = document.getElementById("pass");
   if (!pass) return;
 
-  if (pass.value === "LOVE") {
+  if (pass.value === "10112006") {
     window.location.href = "rose.html";
   } else {
     pass.classList.add("shake");
     setTimeout(() => pass.classList.remove("shake"), 400);
-    alert("غلط يبت 💕");
+    alert("مش عارفه تاريخ ميلادك 😡");
   }
 }
 
