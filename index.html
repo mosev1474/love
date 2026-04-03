@@ -1,21 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <!-- يخلي الصفحة مظبوطة على الموبايل من غير زوم -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Love 💖</title>
-  <link rel="stylesheet" href="style.css">
+  <title>اختاري ❤️</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      background: #ffe6eb;
+      padding-top: 100px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .old {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    .new {
+      background-color: #6a5acd;
+      color: white;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 
 <body>
 
-  <div class="card">
-    <h2>Enter Password ❤️</h2>
-    <input type="password" id="pass" placeholder="Enter your secret...">
-    <button onclick="checkPass()">Unlock 💕</button>
-  </div>
+  <h1>اختاري اللي تحبيه ❤️</h1>
 
-  <script src="script.js"></script>
+  <button class="old" onclick="goOld()">يــوم عيد الحب 🥰</button>
+  <button class="new" onclick="goNew()">بـصالحك ي دكتوره حسـونه 🥺</button>
+
+  <script>
+    function goOld() {
+      window.location.href = "old.html";
+    }
+
+    function goNew() {
+      window.location.href = "https://username.github.io/new-project";
+    }
+  </script>
+
 </body>
 </html>
