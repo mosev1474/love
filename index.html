@@ -2,52 +2,98 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>اختاري ❤️</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
+      min-height: 100vh;
       text-align: center;
-      font-family: Arial;
-      background: #ffe6eb;
-      padding-top: 100px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffe6eb 0%, #ffd9e2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 60px;
+      padding: 50px 40px;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     h1 {
-      margin-bottom: 40px;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #b83b5e;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+      font-weight: bold;
     }
 
     button {
       display: block;
-      margin: 20px auto;
-      padding: 15px 30px;
-      font-size: 18px;
+      margin: 25px auto;
+      padding: 18px 45px;
+      font-size: 1.5rem;
+      font-weight: bold;
       border: none;
-      border-radius: 10px;
+      border-radius: 50px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      width: 260px;
+      font-family: inherit;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
     .old {
-      background-color: #ff4d6d;
+      background: linear-gradient(135deg, #ff4d6d, #c9184a);
       color: white;
     }
 
     .new {
-      background-color: #6a5acd;
+      background: linear-gradient(135deg, #7b2cbf, #3c096c);
       color: white;
     }
 
     button:hover {
-      transform: scale(1.1);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    button:active {
+      transform: translateY(2px);
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 35px 25px;
+        margin: 20px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      button {
+        width: 220px;
+        padding: 14px 30px;
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
-
 <body>
-
-  <h1>اختاري يبت انتي يقمر 😍</h1>
-
-  <button class="old" onclick="goOld()">يوم 16/2 🥰</button>
-  <button class="new" onclick="goNew()">حقك عليا  💗</button>
+  <div class="container">
+    <h1>اختاري يبت انتي يقمر 😍</h1>
+    <button class="old" onclick="goOld()">يوم 16/2 🥰</button>
+    <button class="new" onclick="goNew()">حقك عليا 💗</button>
+  </div>
 
   <script>
     function goOld() {
@@ -55,9 +101,9 @@
     }
 
     function goNew() {
-      window.location.href = "https://username.github.io/new-project";
+      // غيري الرابط هنا حسب ما تبغي
+      window.location.href = "https://mosev1474.github.io/sorry-site/";
     }
   </script>
-
 </body>
 </html>
