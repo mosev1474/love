@@ -2,8 +2,8 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>اختاري ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>M O S E V // TERMINATED</title>
   <style>
     * {
       margin: 0;
@@ -13,97 +13,611 @@
 
     body {
       min-height: 100vh;
-      text-align: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ffe6eb 0%, #ffd9e2 100%);
+      background: radial-gradient(circle at 30% 10%, #0a0f1e, #03060c);
+      font-family: 'Courier New', 'Fira Code', 'Monaco', monospace;
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    .container {
-      background: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(10px);
-      border-radius: 60px;
-      padding: 50px 40px;
-      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.5);
+    /* تأثير الخلفية الهاكر - خطوط عشوائية وميض */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.03) 0px,
+        rgba(0, 255, 0, 0.03) 2px,
+        transparent 2px,
+        transparent 6px
+      );
+      pointer-events: none;
+      z-index: 1;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 50px;
-      color: #b83b5e;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
-      font-weight: bold;
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(0, 255, 0, 0.02) 0px,
+        rgba(0, 255, 0, 0.02) 1px,
+        transparent 1px,
+        transparent 8px
+      );
+      pointer-events: none;
+      z-index: 1;
     }
 
-    button {
-      display: block;
-      margin: 25px auto;
-      padding: 18px 45px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: 260px;
-      font-family: inherit;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* حاوية التكس تختفي وتظهر */
+    .glitch-container {
+      text-align: center;
+      background: rgba(0, 5, 10, 0.65);
+      backdrop-filter: blur(3px);
+      border: 1px solid rgba(0, 255, 0, 0.25);
+      border-radius: 32px;
+      padding: 3rem 4rem;
+      box-shadow: 0 0 40px rgba(0, 255, 0, 0.1), inset 0 0 15px rgba(0, 255, 0, 0.05);
+      animation: borderPulse 3s infinite ease-in-out;
+      z-index: 10;
+      margin: 20px;
     }
 
-    .old {
-      background: linear-gradient(135deg, #ff4d6d, #c9184a);
-      color: white;
-    }
-
-    .new {
-      background: linear-gradient(135deg, #7b2cbf, #3c096c);
-      color: white;
-    }
-
-    button:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    button:active {
-      transform: translateY(2px);
-    }
-
-    @media (max-width: 500px) {
-      .container {
-        padding: 35px 25px;
-        margin: 20px;
+    @keyframes borderPulse {
+      0% {
+        border-color: rgba(0, 255, 0, 0.2);
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.05);
       }
-      h1 {
-        font-size: 1.8rem;
+      50% {
+        border-color: rgba(0, 255, 0, 0.6);
+        box-shadow: 0 0 35px rgba(0, 255, 100, 0.25);
       }
-      button {
-        width: 220px;
-        padding: 14px 30px;
+      100% {
+        border-color: rgba(0, 255, 0, 0.2);
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.05);
+      }
+    }
+
+    /* الكلمة الرئيسية "تم غلق هذا الموقع" مع تأثير glitch */
+    .main-message {
+      font-size: clamp(2rem, 8vw, 4rem);
+      font-weight: 900;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #0f0;
+      text-shadow: 0 0 8px #0f0, 0 0 15px #0f0;
+      font-family: 'Courier New', monospace;
+      margin-bottom: 35px;
+      position: relative;
+      animation: glitchText 2.8s infinite steps(1);
+      transition: opacity 0.2s ease;
+    }
+
+    /* تأثير الغليتش (اهتزاز وتداخل) */
+    @keyframes glitchText {
+      0%, 100% {
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.6), -0.05em -0.025em 0 rgba(0, 255, 255, 0.6);
+        transform: translate(0px, 0px);
+      }
+      12% {
+        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.7), 0.025em 0.05em 0 rgba(0, 255, 255, 0.7);
+        transform: translate(1.5px, -1px);
+      }
+      25% {
+        text-shadow: 0.05em 0.05em 0 rgba(255, 0, 0, 0.5), -0.05em -0.025em 0 rgba(0, 255, 255, 0.5);
+        transform: translate(-1px, 0.5px);
+      }
+      37% {
+        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.8), 0.025em 0.05em 0 rgba(0, 255, 255, 0.8);
+        transform: translate(0px, 1px);
+      }
+      50% {
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.6), -0.05em -0.025em 0 rgba(0, 255, 255, 0.6);
+        transform: translate(-0.5px, -1.2px);
+      }
+      62% {
+        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.7), 0.025em 0.05em 0 rgba(0, 255, 255, 0.7);
+        transform: translate(1.2px, 0.8px);
+      }
+      75% {
+        text-shadow: 0.05em 0.05em 0 rgba(255, 0, 0, 0.5), -0.05em -0.025em 0 rgba(0, 255, 255, 0.5);
+        transform: translate(-1px, -0.3px);
+      }
+      87% {
+        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.8), 0.025em 0.05em 0 rgba(0, 255, 255, 0.8);
+        transform: translate(0.6px, 1.2px);
+      }
+    }
+
+    /* الخط الرفيع بلون أغمق */
+    .thin-line {
+      width: 80%;
+      margin: 15px auto 28px auto;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #1a4d1a, #0a3b0a, #1a4d1a, transparent);
+      box-shadow: 0 0 3px #0a3b0a;
+    }
+
+    /* نص M O S E V بتأثير هكر - يختفي ويظهر */
+    .hacker-signature {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 6px;
+      color: #2b7a2b;
+      background: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+      font-family: monospace;
+      transition: opacity 0.3s ease, text-shadow 0.2s;
+      animation: blinkPulse 1.8s infinite alternate, flicker 0.15s infinite alternate;
+      text-shadow: 0 0 5px #0a4d0a;
+    }
+
+    /* تأثير النبض مع اختفاء جزئي */
+    @keyframes blinkPulse {
+      0% {
+        opacity: 0.4;
+        text-shadow: 0 0 0px #0f0;
+        letter-spacing: 4px;
+      }
+      100% {
+        opacity: 1;
+        text-shadow: 0 0 12px #0f0;
+        letter-spacing: 6px;
+      }
+    }
+
+    /* وميض سريع شبيه بالهاكر */
+    @keyframes flicker {
+      0% { opacity: 0.9; }
+      5% { opacity: 0.5; }
+      10% { opacity: 0.95; }
+      15% { opacity: 0.7; }
+      20% { opacity: 1; }
+      50% { opacity: 0.85; }
+      70% { opacity: 1; }
+      85% { opacity: 0.6; }
+      100% { opacity: 0.95; }
+    }
+
+    /* النص الإضافي أسفل "الموقع بدون فائدة الان" يختفي ويظهر أيضاً */
+    .status-message {
+      margin-top: 25px;
+      font-size: 1rem;
+      color: #5f9e5f;
+      font-family: monospace;
+      border-top: 1px dashed #1e4d1e;
+      padding-top: 18px;
+      display: inline-block;
+      transition: all 0.2s;
+      letter-spacing: 1px;
+      animation: fadeInOut 2.2s infinite alternate;
+    }
+
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0.2;
+        text-shadow: none;
+        letter-spacing: 0px;
+      }
+      50% {
+        opacity: 0.9;
+        text-shadow: 0 0 4px #0f0;
+        letter-spacing: 1.5px;
+      }
+      100% {
+        opacity: 0.5;
+        letter-spacing: 2px;
+        text-shadow: 0 0 2px #0a5f0a;
+      }
+    }
+
+    /* تأثير hacker اضافي: أعمدة عشوائية */
+    .matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    /* كود عشوائي متحرك اختياري */
+    .scan-line {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(0, 255, 0, 0.3);
+      box-shadow: 0 0 12px #0f0;
+      animation: scanMove 6s linear infinite;
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    @keyframes scanMove {
+      0% {
+        top: 0%;
+      }
+      100% {
+        top: 100%;
+      }
+    }
+
+    /* استجابة للهواتف */
+    @media (max-width: 550px) {
+      .glitch-container {
+        padding: 2rem 1.5rem;
+      }
+      .main-message {
+        letter-spacing: 2px;
+        font-size: clamp(1.8rem, 7vw, 2.8rem);
+      }
+      .hacker-signature {
         font-size: 1.2rem;
+        letter-spacing: 3px;
       }
+      .status-message {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* إضافة تأثير دخان / أخطاء */
+    .error-dust {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(45deg, rgba(0,20,0,0.2) 0px, rgba(0,20,0,0.2) 2px, transparent 2px, transparent 8px);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* وهم المؤشر الطرفي */
+    .cursor-blink {
+      display: inline-block;
+      width: 10px;
+      height: 1.2rem;
+      background-color: #0f0;
+      vertical-align: middle;
+      margin-left: 5px;
+      animation: cursorFlash 1s step-end infinite;
+      box-shadow: 0 0 6px #0f0;
+    }
+
+    @keyframes cursorFlash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* إخفاء النص الرئيسي بشكل متقطع */
+    .flicker-text {
+      animation: suddenHide 3.7s infinite steps(2);
+    }
+
+    @keyframes suddenHide {
+      0%, 80%, 83%, 100% {
+        opacity: 1;
+        visibility: visible;
+      }
+      81%, 82% {
+        opacity: 0;
+        visibility: hidden;
+      }
+      97% {
+        opacity: 0.2;
+      }
+      98% {
+        opacity: 1;
+      }
+    }
+
+    /* تطبيق التأثيرات على العناصر لجعل الكلام يختفي ويظهر */
+    .glitch-container .main-message {
+      animation: glitchText 2.8s infinite steps(1), vanishAppear 4s infinite alternate;
+    }
+
+    @keyframes vanishAppear {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+      20% {
+        opacity: 0.9;
+      }
+      40% {
+        opacity: 0.2;
+        transform: scale(0.98);
+        filter: blur(1px);
+        text-shadow: 0 0 0px transparent;
+      }
+      60% {
+        opacity: 0.8;
+        transform: scale(1.01);
+        filter: blur(0px);
+      }
+      80% {
+        opacity: 0.05;
+        letter-spacing: 10px;
+        visibility: visible;
+      }
+      95% {
+        opacity: 1;
+        letter-spacing: 6px;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* الحركة للخط الرفيع + M O S E V + النص السفلي يختفي ويظهر بشكل مختلف */
+    .thin-line {
+      animation: lineGlow 2.3s infinite alternate;
+    }
+
+    @keyframes lineGlow {
+      0% {
+        opacity: 0.3;
+        width: 40%;
+      }
+      100% {
+        opacity: 1;
+        width: 85%;
+        background: linear-gradient(90deg, transparent, #2b9b2b, #0f5f0f, #2b9b2b, transparent);
+      }
+    }
+
+    .hacker-signature {
+      animation: blinkPulse 1.8s infinite alternate, vanishTextCustom 3.2s infinite;
+    }
+
+    @keyframes vanishTextCustom {
+      0%, 20% { opacity: 1; letter-spacing: 6px;}
+      35% { opacity: 0.15; letter-spacing: 2px; text-shadow: none; }
+      50% { opacity: 0.9; letter-spacing: 5px;}
+      70% { opacity: 0.05; filter: blur(1.2px);}
+      85% { opacity: 1; filter: blur(0px); letter-spacing: 6px;}
+      100% { opacity: 0.95;}
+    }
+
+    .status-message {
+      animation: fadeInOut 2.2s infinite alternate, disappearSuddenly 3s infinite;
+    }
+
+    @keyframes disappearSuddenly {
+      0%, 40% { opacity: 0.7; display: inline-block; }
+      55% { opacity: 0; visibility: hidden; }
+      70% { opacity: 0.9; visibility: visible; }
+      85% { opacity: 0.1; }
+      100% { opacity: 0.8; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>اختاري ينور عيني 😍</h1>
-    <button class="old" onclick="goOld()">يوم 14/2 🥰</button>
-    <button class="new" onclick="goNew()">عايز نرجع زي الاول   💔</button>
+
+  <!-- شاشة تأثير هكر إضافية -->
+  <div class="matrix-bg"></div>
+  <div class="scan-line"></div>
+  <div class="error-dust"></div>
+
+  <div class="glitch-container">
+    <!-- الكلمة الوحيدة في نص الشاشة: تم غلق هذا الموقع -->
+    <div class="main-message">
+      تم غلق هذا الموقع
+    </div>
+
+    <!-- خط رفيع بلون أغمق -->
+    <div class="thin-line"></div>
+
+    <!-- اسم M O S E V مع تأثيرات -->
+    <div>
+      <span class="hacker-signature">M O S E V</span>
+    </div>
+
+    <!-- جملة أن الموقع بدون فائدة الآن -->
+    <div class="status-message">
+      > أن الموقع بدون فائده الان <span class="cursor-blink"></span>
+    </div>
+
+    <!-- لمحة هكر إضافية: نص عائم اختياري (يمكن إضافة تأثير يختفي مع الباقي) -->
+    <div style="margin-top: 20px; font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px; animation: fadeInOut 4s infinite; color: #2e7d32;">
+      [ SYSTEM OFFLINE | ACCESS DENIED ]
+    </div>
   </div>
 
   <script>
-    function goOld() {
-      window.location.href = "old.html";
-    }
-
-    function goNew() {
-      // غيري الرابط هنا حسب ما تبغي
-      window.location.href = "https://mosev1474.github.io/sorry-site/";
-    }
+    (function() {
+      // إضافة تأثيرات ديناميكية إضافية: جعل النصوص تختفي وتظهر بشكل غير متوقع
+      // أيضًا إضافة تأثير عشوائي للهاكر (تغيير الألوان أو وميض على مستوى أعلى)
+      
+      // تحديد العناصر التي نريد أن نطبق عليها اختفاء إضافي عشوائي
+      const mainMsg = document.querySelector('.main-message');
+      const hackerName = document.querySelector('.hacker-signature');
+      const statusMsg = document.querySelector('.status-message');
+      const thinLine = document.querySelector('.thin-line');
+      
+      // مجموعة من التأثيرات الإضافية العشوائية لزيادة "الهاكر" وجعل الكلام يختفي ويظهر بتوقيتات مختلفة
+      let intervalIds = [];
+      
+      // وظيفة لجعل النص الرئيسي يومض بوتيرة عشوائية إضافية أسرع من CSS
+      function addRandomBlink(element, minDuration, maxDuration) {
+        if (!element) return;
+        let originalTransition = element.style.transition;
+        let isVisible = true;
+        const interval = setInterval(() => {
+          // عدم التعديل على الكود بشكل عنيف, فقط نلعب بالشفافية للحظات 
+          if (Math.random() > 0.65) {
+            element.style.transition = 'opacity 0.08s linear';
+            if (isVisible) {
+              element.style.opacity = '0';
+              isVisible = false;
+            } else {
+              element.style.opacity = '';
+              isVisible = true;
+            }
+            // إعادة الضبط بعد 150 مللي
+            setTimeout(() => {
+              if (element) {
+                element.style.opacity = '';
+                element.style.transition = originalTransition;
+              }
+            }, 140);
+          }
+        }, Math.random() * 800 + 400); // كل 400-1200 مللي一闪
+        intervalIds.push(interval);
+      }
+      
+      // إضافة وميض سريع لكل العناصر الرئيسية
+      addRandomBlink(mainMsg);
+      addRandomBlink(hackerName);
+      addRandomBlink(statusMsg);
+      
+      // تأثير إضافي : جعل الخط الرفيع يختفي وينبض بظهور عشوائي
+      if (thinLine) {
+        let lineInterval = setInterval(() => {
+          if (Math.random() > 0.7) {
+            thinLine.style.opacity = '0.1';
+            thinLine.style.transition = 'opacity 0.1s';
+            setTimeout(() => {
+              if (thinLine) thinLine.style.opacity = '';
+            }, 150);
+          } else if (Math.random() > 0.85) {
+            thinLine.style.boxShadow = '0 0 6px #0f0';
+            setTimeout(() => {
+              if (thinLine) thinLine.style.boxShadow = '';
+            }, 200);
+          }
+        }, 900);
+        intervalIds.push(lineInterval);
+      }
+      
+      // توليد تأثيرات كتابية hacker (نصوص وهمية تظهر وتختفي في الخلفية - بدون إزعاج)
+      const matrixDiv = document.querySelector('.matrix-bg');
+      if (matrixDiv) {
+        const canvas = document.createElement('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '0';
+        canvas.style.opacity = '0.2';
+        matrixDiv.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+        
+        const chars = "01アイウエオカキクケコABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+[]{};:<>?";
+        let fontSize = 14;
+        let columns = Math.floor(canvas.width / fontSize);
+        let drops = [];
+        for (let i = 0; i < columns; i++) {
+          drops[i] = Math.random() * -100;
+        }
+        
+        function drawMatrix() {
+          if (!canvas || !ctx) return;
+          ctx.fillStyle = 'rgba(0, 5, 0, 0.04)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = '#0c8c0c';
+          ctx.font = fontSize + 'px monospace';
+          for (let i = 0; i < drops.length; i++) {
+            const text = chars[Math.floor(Math.random() * chars.length)];
+            const x = i * fontSize;
+            const y = drops[i] * fontSize;
+            ctx.fillText(text, x, y);
+            if (y > canvas.height && Math.random() > 0.975) {
+              drops[i] = 0;
+            }
+            drops[i]++;
+          }
+          requestAnimationFrame(drawMatrix);
+        }
+        
+        const resizeCanvas = () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          columns = Math.floor(canvas.width / fontSize);
+          drops = [];
+          for (let i = 0; i < columns; i++) drops[i] = Math.random() * -100;
+        };
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        drawMatrix();
+      }
+      
+      // تأثير هكر إضافي: النصوص تختفي تماماً للحظات متفرقة على مستوى الكل
+      let totalBlinkCount = 0;
+      const globalFlicker = setInterval(() => {
+        if (Math.random() > 0.75) {
+          const container = document.querySelector('.glitch-container');
+          if (container) {
+            container.style.transition = 'opacity 0.07s';
+            container.style.opacity = '0.3';
+            setTimeout(() => {
+              if (container) container.style.opacity = '';
+            }, 90);
+          }
+        }
+        // تأثير اختفاء وجيز لكل النصوص بشكل متقطع
+        if (Math.random() > 0.85) {
+          const elementsToBlink = [mainMsg, hackerName, statusMsg];
+          elementsToBlink.forEach(el => {
+            if (el) {
+              let oldTransition = el.style.transition;
+              el.style.transition = 'opacity 0.03s';
+              el.style.opacity = '0';
+              setTimeout(() => {
+                if (el) {
+                  el.style.opacity = '';
+                  el.style.transition = oldTransition;
+                }
+              }, 50);
+            }
+          });
+        }
+      }, 1800);
+      intervalIds.push(globalFlicker);
+      
+      // تعديل مؤشر الإنهاء لمنع تراكم كبير
+      window.addEventListener('beforeunload', () => {
+        intervalIds.forEach(id => clearInterval(id));
+      });
+      
+      // إضافة بعض الزخارف الطرفية: طباعة وحدة التحكم
+      console.log("%c[ M 0 5 3 V ] >>  CONNECTION LOST . . .  >>  ACCESS TERMINATED", "color: #0f0; font-size: 16px; font-family: monospace");
+      console.log("%cالموقع بدون فائده الان .. تم غلق هذا الموقع.", "color: #2a8c2a; font-style: italic");
+      
+      // تأثير لنص M O S E V يختفي ويظهر عشوائياً أسرع
+      let extraTicker = setInterval(() => {
+        if (hackerName && Math.random() > 0.8) {
+          hackerName.style.transform = `translateX(${Math.random() * 4 - 2}px)`;
+          setTimeout(() => {
+            if (hackerName) hackerName.style.transform = '';
+          }, 70);
+        }
+      }, 500);
+      intervalIds.push(extraTicker);
+      
+    })();
   </script>
 </body>
 </html>
