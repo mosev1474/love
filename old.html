@@ -2,68 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- يخلي الصفحة مظبوطة على الموبايل من غير زوم -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Love 💖</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <div class="scene">
-
-    <div class="petals-bg" id="petalsContainer"></div>
-
-    <div class="card-wrap">
-      <div class="card-outer">
-
-        <div id="loginView">
-          <div class="heart-icon">
-            <svg width="44" height="40" viewBox="0 0 44 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22 37S2 24 2 12A10 10 0 0122 8 10 10 0 0142 12C42 24 22 37 22 37Z" fill="#e05070" opacity="0.9"/>
-              <path d="M22 33S5 22 5 13A7 7 0 0122 10 7 7 0 0139 13C39 22 22 33 22 33Z" fill="#f08090" opacity="0.5"/>
-            </svg>
-          </div>
-
-          <p class="card-title">Enter Password</p>
-          <p class="card-sub">Only the one with the key may enter</p>
-
-          <div class="field-wrap">
-            <input
-              class="field-input"
-              type="password"
-              id="passInput"
-              placeholder="Your secret..."
-              autocomplete="off"
-              onkeydown="if(event.key==='Enter') checkPass()"
-            >
-            <button class="eye-btn" onclick="toggleEye()" id="eyeBtn" aria-label="show password">
-              <i class="ti ti-eye" id="eyeIcon"></i>
-            </button>
-          </div>
-
-          <button class="btn-unlock" onclick="checkPass()">Unlock 💕</button>
-
-          <div class="msg-area" id="msgArea"></div>
-
-          <div class="divider">
-            <div class="divider-line"></div>
-            <span class="divider-dot">✦</span>
-            <div class="divider-line"></div>
-          </div>
-          <p class="hint-text">A little secret between two hearts 🌹</p>
-        </div>
-
-        <div id="successView" class="success-screen">
-          <span class="big-heart">💖</span>
-          <p class="success-msg">You found the door to my heart</p>
-          <p class="stars">✦ ✦ ✦</p>
-        </div>
-
-      </div>
-    </div>
+  <div class="card">
+    <h2>Enter Password ❤️</h2>
+    <input type="password" id="pass" placeholder="Enter your secret...">
+    <button onclick="checkPass()">Unlock 💕</button>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+          
