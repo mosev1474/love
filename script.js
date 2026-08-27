@@ -80,25 +80,20 @@ function spawnHeart(){
   setTimeout(()=>h.remove(),2000);
 }
 
-// ===== العداد =====
-const startDate = new Date("2025-11-09T19:20:00");
-const endDate = new Date("2026-07-22T23:59:59"); // آخر يوم كنتوا مع بعض - العداد بيقف هنا
-
-setInterval(() => {
+// ===== العداد (متجمد على آخر يوم كنا مع بعض: 2026/7/22) =====
+function renderFrozenCounter(){
   const counter = document.getElementById("counter");
   if (!counter) return;
 
-  const now = new Date();
-  const currentTime = now > endDate ? endDate : now; // منعدّيش الـ endDate
-  const diff = Math.max(0, currentTime - startDate);
+  const days = 261;
+  const hours = 4;
+  const minutes = 47;
+  const seconds = 3;
 
-  const days = Math.floor(diff / (1000*60*60*24));
-  const hours = Math.floor((diff / (1000*60*60)) % 24);
-  const minutes = Math.floor((diff / (1000*60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+  counter.innerHTML = `💗 مع بعض بقالنا ${days} يوم ${hours} ساعة ${minutes} دقيقة ${seconds} ثانية<br><span class="freeze-date">2026/7/22</span>`;
+}
 
-  counter.innerHTML = `💗 مع بعض بقالنا ${days} يوم ${hours} ساعة ${minutes} دقيقة ${seconds} ثانية`;
-}, 1000);
+renderFrozenCounter();
 
 function goFinal(){
   window.location.href = "final.html";
