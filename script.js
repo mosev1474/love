@@ -82,13 +82,15 @@ function spawnHeart(){
 
 // ===== العداد =====
 const startDate = new Date("2025-11-09T19:20:00");
+const endDate = new Date("2026-07-22T23:59:59"); // آخر يوم كنتوا مع بعض - العداد بيقف هنا
 
 setInterval(() => {
   const counter = document.getElementById("counter");
   if (!counter) return;
 
   const now = new Date();
-  const diff = Math.max(0, now - startDate);
+  const currentTime = now > endDate ? endDate : now; // منعدّيش الـ endDate
+  const diff = Math.max(0, currentTime - startDate);
 
   const days = Math.floor(diff / (1000*60*60*24));
   const hours = Math.floor((diff / (1000*60*60)) % 24);
